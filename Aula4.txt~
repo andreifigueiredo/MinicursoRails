@@ -1,0 +1,101 @@
+﻿Db:seed
+Customer.create(name: "Marina", email: "emailbolado", birthday: Date.today, obs:"bladsdas")
+-rake db:seed
+10.times do |i|
+        puts “Cadastrando #{i}
+        Customer.create(name: "Customer - #{i}", email: "emailbolado", birthday: Date.today, obs:"bladsdas")
+End
+
+
+Gem faker
+        10.times do |i|
+    customer_name = Faker::Name.name
+	customer_email = Faker::Internet.email
+    puts "Cadastrando #{customer_name}"
+    Customer.create(name: "Customer - customer_name", 
+       	email: "customer_email", 
+       	birthday: Date.today, 
+       	obs:"bladsdas")
+end
+
+
+Criando suas rake tasks
+        -rails g task utils setup_customer 
+Desc “popular tabela customers”
+        Task setup_customer :enviroment do 
+                Customer_name = Faker::Name.name
+Customer_email = Faker::Internet.email
+        10.times do |i|
+        Puts “Cadastrando #{Customer_name}
+        Customer.create(name: "Customer - customer_name", email: "customer_email", birthday: Date.today, obs:"bladsdas")
+End
+
+
+Mostrando duas taks
+
+
+Desc “popular tabela customers 10”
+#verifica se app esta em desenvolvimento
+If Rails.env.development?
+        Task setup_customer10 :enviroment do 
+                Customer_name = Faker::Name.name
+Customer_email = Faker::Internet.email
+        10.times do |i|
+        Puts “Cadastrando #{Customer_name}
+        Customer.create(name: "Customer - customer_name", email: "customer_email", birthday: Date.today, obs:"bladsdas")
+
+
+End
+Else 
+Puts “N esta em desenvolvimento”
+End
+end
+
+
+Desc “popular tabela customers”
+        Task setup_customer20 :enviroment do 
+                Customer_name = Faker::Name.name
+Customer_email = Faker::Internet.email
+        20.times do |i|
+        Puts “Cadastrando #{Customer_name}
+        Customer.create(name: "Customer - customer_name", email: "customer_email", birthday: Date.today, obs:"bladsdas")
+End
+End
+
+
+Com parametro externos
+
+
+Desc “popular tabela customers 10”
+#verifica se app esta em desenvolvimento
+If Rails.env.development?
+If ARGV.size == 2
+        Task setup_customer10 :enviroment do 
+                Customer_name = Faker::Name.name
+Customer_email = Faker::Internet.email
+        env.[‘QTD’].times do |i|
+        Puts “Cadastrando #{Customer_name}
+        Customer.create(name: "Customer - customer_name", email: "customer_email", birthday: Date.today, obs:"bladsdas")
+
+
+End
+Else
+Puts “informe QTD”
+end
+Else 
+Puts “N esta em desenvolvimento”
+End
+End
+
+
+Associacoes
+Belong_to
+Has_many
+Rails new assocexemplo
+Rails g model Father name:string
+Rails g model Child name:string father:references
+Pai = Father.create(name: “Bigpai”)
+Filho = Child.create(name: “Bigfi”)
+Filho.father =pai
+Filho.save!
+pai.Child.create(name: “otofi”)

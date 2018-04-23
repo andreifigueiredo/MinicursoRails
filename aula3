@@ -1,0 +1,41 @@
+#MINICURSO RAILS TESTE
+
+mostrar maneiras diferentes de usar as rotas
+
+symbols x string
+"rails".class
+"rails".object_id
+:rails.class
+:rails.object_id
+
+active recors
+x = Customer.all
+x[0]
+x[1]
+x = Customer.last
+y = Customer.where(id: 1)
+z = Customer.create(name: "maria", email: "emailbolado", birthday: Date.today, obs:"bladsdas")
+w = Customer.new
+w.name = "Irineu"
+w.email = "emailbolado"
+w.birthday = Date.today
+w.obs ="obsldlasd"
+w.save
+
+mostrar controllers
+
+Partials
+mostrar render
+mostrar form criado com helpers
+DRY
+<%= render :partial => 'form' %>
+<%= render "curstomers/form"%>
+
+mostrar os helpers
+API DOCK
+
+bootstrap
+gem "twitter-bootstrap-rails"
+rails g bootstrap
+
+

@@ -1,0 +1,41 @@
+#MINICURSO RAILS TESTE
+
+criando projeto rails usando outro banco de dados:
+	rails new mysqlexample --database=mysql
+
+ambiente desenvolvimento:
+	rails s -e production
+
+vendo rake tasks:
+	rake -T
+	rake db:create
+
+mostrar geradores:
+	rails generate scaffold customer nome:string email:string birthday:data obs:text
+
+mostrar migrate:
+	rake db:migrate
+
+exemplo erb e textos interpolados**
+
+console
+	rails console ou rails c
+	a = customer.first
+	a.name
+	b = customer.all
+
+mostrar controle e variaveis de instancia	
+
+criar novo controle:
+	rails generate controller welcome
+	def index
+	end
+	criar novo arquivo naview index.html.erb
+
+cria rota para welcome:
+	get 'inicio' => "welcome#index"
+	root "welcome#index"
+
+mostrando helper link_to
+	<a href="/customers/new">New Customer</a>
+	<%= link_to "Cadastro de Clientes", customers_path%>
